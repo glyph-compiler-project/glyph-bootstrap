@@ -1,0 +1,27 @@
+name:                glyph-bootstrap
+version:             0.1.0.0
+github:              "https://github.com/glyph-compiler-project/glyph-bootstrap"
+license:             MIT
+author:              "Sebastian Benjamin"
+maintainer:          "Sebastian Benjamin"
+copyright:           "2019 Sebastian Benjamin"
+
+extra-source-files:
+- README.md
+
+description:         Please see the README on Github at <https://github.com/lambda-land/llvm-playground/choice-calc-compiler#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- parsec
+#- llvm-hs-pure
+#- llvm-hs-pretty
+
+executables:
+  main:
+    main:                Main.hs
+    source-dirs:         src
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
