@@ -7,10 +7,12 @@ import Parser
 main :: IO ()
 main = do
   args <- getArgs
-  if (elem "--repl" args) then (interpret args) else (compile args) 
+  if (elem "--repl" args) then interpret else (compile args) 
 
 compile :: [String] -> IO ()
 compile args = putStrLn "Compiling!"
 
-interpret :: [String] -> IO ()
-interpret args = putStrLn "Interpreting!"
+interpret :: IO ()
+interpret = interact $ \s -> case parseProg s of
+    Left err -> show err
+    Right val -> show val

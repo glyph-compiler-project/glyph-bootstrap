@@ -1,4 +1,4 @@
 module RawSyntax where
 
-data Cons = Cons Cons Cons | Lit String | Nil
-data Prog = Prog [Cons]
+data Cons = Cons Cons Cons | Lit String | Nil deriving (Show)
+data Prog = Prog [Cons] deriving (Show)

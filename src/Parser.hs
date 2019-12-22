@@ -21,6 +21,13 @@ languageDef = emptyDef
 -- Create a lexer that can be used to build the parser combinators
 lexer = Token.makeTokenParser languageDef
 
+parseProg :: String -> Either ParseError Prog
+parseProg inputString = parse' prog "glyph" inputString
+
+-- Wrapper function that runs the parser and returns any errors OR a valid raw AST
+parse' :: Parser a -> String -> String -> Either ParseError a
+parse' parser name inputString = parse parser name inputString 
+
 -- Programs are a series of cons cells separated by newlines
 prog :: Parser Prog
 prog = do
@@ -47,5 +54,6 @@ cellContents = do
 val :: Parser Cons
 val = do 
   value <- many1 letter
-  return $ case value of "nil" -> Nil
-                         _     -> Lit value
+  return $ case value of 
+    "nil" -> Nil
+    _     -> Lit value
