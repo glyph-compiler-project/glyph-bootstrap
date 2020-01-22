@@ -14,8 +14,7 @@ description:         Please see the README on Github at <https://github.com/lamb
 dependencies:
 - base >= 4.7 && < 5
 - parsec
-#- llvm-hs-pure
-#- llvm-hs-pretty
+- llvm-hs-pure
 
 executables:
   main:

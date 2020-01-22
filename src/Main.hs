@@ -2,7 +2,7 @@ module Main where
 
 import System.Environment
 
-import Parser
+import RawParser
 
 main :: IO ()
 main = do
@@ -13,6 +13,6 @@ compile :: [String] -> IO ()
 compile args = putStrLn "Compiling!"
 
 interpret :: IO ()
-interpret = interact $ \s -> case parseProg s of
+interpret = interact $ \s -> case parseRawProg s of
     Left err -> show err
     Right val -> show val
