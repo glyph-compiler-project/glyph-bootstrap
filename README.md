@@ -1,2 +1,2 @@
 # glyph-bootstrap
-A compiler for a Lisp.
+A compiler for a Lisp/ML.
