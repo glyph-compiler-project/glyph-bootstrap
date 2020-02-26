@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: b8d0cc493e636dba201f8c5a0babdf93f0ef7b96d243554a1b22751e67c880f6
+-- hash: ec4132c33e6e9353f73dc36dd52af253fb25b16ac8eee8df41c5823adaf37445
 
 name:           glyph-bootstrap
 version:        0.1.0.0
@@ -27,10 +27,8 @@ source-repository head
 executable main
   main-is: Main.hs
   other-modules:
-      Codegen
-      Parser
-      RawParser
-      RawSyntax
+      ConcreteSyntax
+      ConcreteSyntaxParser
       Syntax
       Paths_glyph_bootstrap
   hs-source-dirs:
